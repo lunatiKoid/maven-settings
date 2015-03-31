@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!-- ======================================================================== -->
+<!--  settings.xml for maven users                                            -->
+<!--  Version: 3                                                              -->
+<!--  Auhtor: jingshun shi                                                    -->
+<!--  $Id: settings.xml 182629 2012-06-28 04:31:35Z jingshun.shijs $ -->
+<!-- ======================================================================== -->
+
+<settings>
+
+	<mirrors>
+    		<mirror>
+        		<id>nexus-osc</id>
+        		<mirrorOf>*</mirrorOf>
+        		<name>Nexus osc</name>
+        		<url>http://maven.oschina.net/content/groups/public</url>
+    		</mirror>
+
+		<mirror>
+        		<id>nexus-osc-thirdparty</id>
+        		<mirrorOf>thirdparty</mirrorOf>
+        		<name>Nexus osc thirdparty</name>
+        		<url>http://maven.oschina.net/content/repositories/thirdparty</url>
+    		</mirror>
+	</mirrors>
+       	<!-- ======================================================================== -->
+	<!--  Profiles                                                                -->
+	<!-- ======================================================================== -->
+	<profiles>
+	<profile>
+            	<id>jdk-1.6</id>
+            	<activation>
+            		<jdk>1.6</jdk>
+            	</activation>
+            	<repositories>
+            		<repository>
+            			<id>nexus</id>
+            			<name>local private nexus</name>
+            			<url>http://maven.oschina.net/content/groups/public</url>
+            			<releases>
+            				<enabled>true</enabled>
+            			</releases>
+            			<snapshots>
+            				<enabled>true</enabled>
+            			</snapshots>
+            		</repository>
+            	</repositories>
+            	<pluginRepositories>
+            		<pluginRepository>
+            			<id>nexus</id>
+            			<name>local private nexus</name>
+            			<url>http://maven.oschina.net/content/groups/public</url>
+            			<releases>
+            				<enabled>true</enabled>
+            			</releases>
+            			<snapshots>
+            				<enabled>true</enabled>
+            			</snapshots>
+            		</pluginRepository>
+            	</pluginRepositories>
+        </profile>
+	</profiles>
+
+
+<pluginGroups>
+<pluginGroup>org.apache.maven.plugins</pluginGroup>
+<pluginGroup>com.alibaba.citrus.tool</pluginGroup>
+<pluginGroup>com.alibaba.maven.plugins</pluginGroup>
+</pluginGroups>
+
+	<localRepository>/root/.m2/repository/</localRepository>
+
+</settings>
